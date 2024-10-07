@@ -1,6 +1,9 @@
+<!-- PHP -->
 <?php
 ?>
 
+
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,8 +24,31 @@
     <header>
         <h1 class="text-center mt-5 mb-3">Strong Password Generator</h1>
 
-        <h2 class="text-center text-white mb-3">Genera un password sicura</h2>
+        <h2 class="text-center text-white mb-5">Genera un password sicura</h2>
     </header>
+
+    <main>
+        <section class="container">
+            <form action="index.php" method="get" class="p-3">
+                <div>
+                    <!-- Password -->
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <span>Lunghezza password:</span>
+                        </div>
+
+                        <div class="col-3 me-4">
+                            <input type="password" id="inputPassword5" class="form-control"
+                                aria-describedby="passwordHelpBlock">
+                        </div>
+                    </div>
+
+
+                </div>
+            </form>
+        </section>
+
+    </main>
 </body>
 
 </html>

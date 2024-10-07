@@ -5,3 +5,8 @@ body {
 h1 {
     color: #7B8D90;
 }
+
+form {
+    background-color: white;
+    border-radius: 10px;
+}
