@@ -1,5 +1,6 @@
 <!-- PHP -->
 <?php
+
 ?>
 
 
@@ -34,15 +35,20 @@
                     <!-- Password -->
                     <div class="row align-items-center">
                         <div class="col">
-                            <span>Lunghezza password:</span>
+                            <span>Lunghezza password: <?php echo strlen($_GET["password"]) ?></span>
                         </div>
 
                         <div class="col-3 me-4">
                             <input type="password" id="inputPassword5" class="form-control"
-                                aria-describedby="passwordHelpBlock">
+                                aria-describedby="passwordHelpBlock" name="password">
                         </div>
                     </div>
 
+                    <!-- Buttons -->
+                    <div>
+                        <button type="submit" class="btn btn-primary">Invia</button>
+                        <button type="reset" class="btn btn-secondary">Annulla</button>
+                    </div>
 
                 </div>
             </form>
