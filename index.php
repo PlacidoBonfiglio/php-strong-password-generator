@@ -32,10 +32,10 @@ if (isset($_GET['password'])) {
 
     <main>
         <section class="container">
-            <form action="index.php" method="get" class="p-3">
+            <form action="index.php" method="get" class="p-4">
                 <div>
                     <!-- Password -->
-                    <div class="row align-items-center">
+                    <div class="row align-items-center mb-4">
 
                         <div class="col mb-4">
                             <span>Lunghezza password:
@@ -55,12 +55,24 @@ if (isset($_GET['password'])) {
                     <!-- Ripetizione caratteri -->
                     <div class="row">
                         <div class="col">
-                            <div class="col">
-                                <span>Consenti ripetizioni di uno o più caratteri:</span>
-                            </div>
+                            <span>Consenti ripetizioni di uno o più caratteri:</span>
                         </div>
 
-                        <div class="col">
+                        <div class="col-3 me-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Sì
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    No
+                                </label>
+                            </div>
 
                         </div>
                     </div>
