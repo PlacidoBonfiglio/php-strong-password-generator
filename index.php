@@ -1,6 +1,6 @@
 <!-- PHP -->
 <?php
-
+$password = $_GET["password"];
 ?>
 
 
@@ -35,7 +35,7 @@
                     <!-- Password -->
                     <div class="row align-items-center">
                         <div class="col">
-                            <span>Lunghezza password: <?php echo strlen($_GET["password"]) ?></span>
+                            <span>Lunghezza password: <?php echo strlen($password) ?></span>
                         </div>
 
                         <div class="col-3 me-4">
