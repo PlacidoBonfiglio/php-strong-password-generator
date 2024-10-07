@@ -40,7 +40,7 @@ if (isset($_GET['password'])) {
                         <div class="col mb-4">
                             <span>Lunghezza password:
                                 <?php if (isset($_GET['password'])) { ?>
-                                    <?php echo strlen($password); ?>
+                                <?php echo strlen($password); ?>
                                 <?php } ?>
                             </span>
                         </div>
@@ -58,6 +58,7 @@ if (isset($_GET['password'])) {
                             <span>Consenti ripetizioni di uno o più caratteri:</span>
                         </div>
 
+                        <!-- Radio buttons -->
                         <div class="col-3 me-4">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
@@ -66,7 +67,7 @@ if (isset($_GET['password'])) {
                                     Sì
                                 </label>
                             </div>
-                            <div class="form-check">
+                            <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
                                     id="flexRadioDefault1">
                                 <label class="form-check-label" for="flexRadioDefault1">
@@ -74,6 +75,25 @@ if (isset($_GET['password'])) {
                                 </label>
                             </div>
 
+                            <!-- Checkbox -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Lettere
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Numeri
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Simboli
+                                </label>
+                            </div>
                         </div>
                     </div>
 
