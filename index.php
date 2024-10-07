@@ -1,10 +1,24 @@
 <!-- PHP -->
 <?php
-if (isset($_GET['password'])) {
+if (isset($_GET["password"])) {
     $password = $_GET["password"];
 }
-?>
 
+// Creo un array di lettere minuscole 
+$letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
+
+// Creo un array di lettere Maiuscole 
+$capLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+
+// Cre array di numeri 
+$numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// Creo array di simboli
+$symbols = ["!", "?", "&", "$", "@", "#"];
+
+// Prendo una parola a caso dall'array "$words"
+$randomWord = $words[array_rand($words)];
+?>
 
 <!-- HTML -->
 <!DOCTYPE html>
@@ -40,7 +54,7 @@ if (isset($_GET['password'])) {
                         <div class="col mb-4">
                             <span>Lunghezza password:
                                 <?php if (isset($_GET['password'])) { ?>
-                                <?php echo strlen($password); ?>
+                                    <?php echo strlen($password); ?>
                                 <?php } ?>
                             </span>
                         </div>
@@ -58,39 +72,42 @@ if (isset($_GET['password'])) {
                             <span>Consenti ripetizioni di uno o più caratteri:</span>
                         </div>
 
-                        <!-- Radio buttons -->
+
                         <div class="col-3 me-4">
+                            <!-- Radio buttons -->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2" checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
+                                <input class="form-check-input" type="radio" name="character-repetition"
+                                    id="character-repetition" checked>
+                                <label class="form-check-label" for="character-repetition">
                                     Sì
                                 </label>
                             </div>
                             <div class="form-check mb-4">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
+                                <input class="form-check-input" type="radio" name="no-character-repetition"
+                                    id="no-character-repetition">
+                                <label class="form-check-label" for="no-character-repetition">
                                     No
                                 </label>
                             </div>
 
                             <!-- Checkbox -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" id="check-letters">
+                                <label class="form-check-label" for="check-letters">
                                     Lettere
                                 </label>
                             </div>
+
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" id="checknumbers">
+                                <label class="form-check-label" for="checknumbers">
                                     Numeri
                                 </label>
                             </div>
+
                             <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" id="check-symbols">
+                                <label class="form-check-label" for="check-symbols">
                                     Simboli
                                 </label>
                             </div>
