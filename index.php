@@ -1,6 +1,8 @@
 <!-- PHP -->
 <?php
-$password = $_GET["password"];
+if (isset($_GET['password'])) {
+    $password = $_GET["password"];
+}
 ?>
 
 
@@ -34,13 +36,32 @@ $password = $_GET["password"];
                 <div>
                     <!-- Password -->
                     <div class="row align-items-center">
-                        <div class="col">
-                            <span>Lunghezza password: <?php echo strlen($password) ?></span>
+
+                        <div class="col mb-4">
+                            <span>Lunghezza password:
+                                <?php if (isset($_GET['password'])) { ?>
+                                    <?php echo strlen($password); ?>
+                                <?php } ?>
+                            </span>
                         </div>
+
 
                         <div class="col-3 me-4">
                             <input type="password" id="inputPassword5" class="form-control"
                                 aria-describedby="passwordHelpBlock" name="password">
+                        </div>
+                    </div>
+
+                    <!-- Ripetizione caratteri -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="col">
+                                <span>Consenti ripetizioni di uno o più caratteri:</span>
+                            </div>
+                        </div>
+
+                        <div class="col">
+
                         </div>
                     </div>
 
