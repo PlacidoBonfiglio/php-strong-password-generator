@@ -1,5 +1,7 @@
 <!-- PHP -->
 <?php
+require_once __DIR__ . "/functions/functions.php";
+
 if (isset($_GET["password"])) {
     $password = $_GET["password"];
 }
@@ -16,8 +18,12 @@ $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // Creo array di simboli
 $symbols = ["!", "?", "&", "$", "@", "#"];
 
-// Prendo una parola a caso dall'array "$words"
-$randomWord = $words[array_rand($words)];
+// Prendo un elemento a caso dagli array
+$randomLetter = $letters[array_rand($letters)];
+
+$randomCapLetter = $capLetters[array_rand($capLetters)];
+
+$randomSymbol = $symbols[array_rand($symbols)];
 ?>
 
 <!-- HTML -->
@@ -54,11 +60,10 @@ $randomWord = $words[array_rand($words)];
                         <div class="col mb-4">
                             <span>Lunghezza password:
                                 <?php if (isset($_GET['password'])) { ?>
-                                    <?php echo strlen($password); ?>
+                                <?php echo strlen($password); ?>
                                 <?php } ?>
                             </span>
                         </div>
-
 
                         <div class="col-3 me-4">
                             <input type="password" id="inputPassword5" class="form-control"
@@ -112,6 +117,10 @@ $randomWord = $words[array_rand($words)];
                                 </label>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="text-center mt-4 mb-5">
+                        La tua nuova password è: <b><?= getRandomInt(1, 20) ?></b>
                     </div>
 
                     <!-- Buttons -->
