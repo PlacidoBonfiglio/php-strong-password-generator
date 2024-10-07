@@ -6,6 +6,11 @@ h1 {
     color: #7B8D90;
 }
 
+#notification {
+    background-color: #CFF4FC;
+    border-radius: 10px;
+}
+
 form {
     background-color: white;
     border-radius: 10px;

@@ -52,6 +52,16 @@ $randomSymbol = $symbols[array_rand($symbols)];
 
     <main>
         <section class="container">
+            <?php if(!isset($_GET["password"])) { ?>
+                <div id="notification" class="mb-3">
+                    <div class="row">
+                        <div class="col-12 p-4 ms-3">
+                            Nessun parametro valido inserito
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
             <form action="index.php" method="get" class="p-4">
                 <div>
                     <!-- Password -->
@@ -118,10 +128,12 @@ $randomSymbol = $symbols[array_rand($symbols)];
                             </div>
                         </div>
                     </div>
-
-                    <div class="text-center mt-4 mb-5">
-                        La tua nuova password è: <b><?= getRandomInt(1, 20) ?></b>
-                    </div>
+                    
+                    <?php if (isset($_GET["password"])) { ?>
+                        <div class="text-center mt-4 mb-5">
+                            La tua nuova password è: <b><?= $password . getRandomInt(1, 20) . $randomCapLetter . $randomSymbol . $randomLetter ?></b>
+                        </div>
+                    <?php } ?>
 
                     <!-- Buttons -->
                     <div>
