@@ -47,7 +47,7 @@ $randomSymbol = $symbols[array_rand($symbols)];
     <header>
         <h1 class="text-center mt-5 mb-3">Strong Password Generator</h1>
 
-        <h2 class="text-center text-white mb-5">Genera un password sicura</h2>
+        <h2 class="text-center text-white mb-5">Genera una password sicura</h2>
     </header>
 
     <main>
@@ -107,21 +107,21 @@ $randomSymbol = $symbols[array_rand($symbols)];
 
                             <!-- Checkbox -->
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="check-letters">
+                                <input class="form-check-input" type="checkbox" id="check-letters" name="checkboxLetters">
                                 <label class="form-check-label" for="check-letters">
                                     Lettere
                                 </label>
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="checknumbers">
+                                <input class="form-check-input" type="checkbox" id="checknumbers" name="checkboxNumbers">
                                 <label class="form-check-label" for="checknumbers">
                                     Numeri
                                 </label>
                             </div>
 
                             <div class="form-check mb-3">
-                                <input class="form-check-input" type="checkbox" id="check-symbols">
+                                <input class="form-check-input" type="checkbox" id="check-symbols" name="checkboxSymbols">
                                 <label class="form-check-label" for="check-symbols">
                                     Simboli
                                 </label>
@@ -131,7 +131,12 @@ $randomSymbol = $symbols[array_rand($symbols)];
                     
                     <?php if (isset($_GET["password"])) { ?>
                         <div class="text-center mt-4 mb-5">
-                            La tua nuova password è: <b><?= $password . getRandomInt(1, 20) . $randomCapLetter . $randomSymbol . $randomLetter ?></b>
+                            La tua nuova password è: <b>
+                                <?php echo $password; 
+                                if (isset($_GET["checkboxLetters"])) {echo $randomLetter . $randomCapLetter;};
+                                if (isset($_GET["checkboxSymbols"])) {echo $randomSymbol;}; 
+                                if (isset($_GET["checkboxNumbers"])) {echo getRandomInt(1, 20);}; ?>
+                            </b>
                         </div>
                     <?php } ?>
 
